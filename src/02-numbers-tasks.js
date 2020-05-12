@@ -234,6 +234,7 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
+
 function toNumber(value, def) {
   if (value instanceof Number && Number.isInteger(value)) return value === parseInt(value, 10);
   return def;
