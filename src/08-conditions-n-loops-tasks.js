@@ -338,7 +338,7 @@ function getDigitalRoot(num) {
  */
 function isBracketsBalanced(str) {
   if (str.length === 0) return true;
-  let answer;
+  let answer = false;
   const brackets = ['[]', '{}', '<>', '()'];
   for (let k = 0; k < brackets.length; k += 1) {
     if (str.includes(brackets[k])) {
@@ -346,8 +346,7 @@ function isBracketsBalanced(str) {
       if (result.length > 1) {
         return isBracketsBalanced(result);
       }
-      if (result.length > 0) answer = false;
-      else answer = true;
+      if (result.length === 0) answer = true;
     }
   }
   return answer;
