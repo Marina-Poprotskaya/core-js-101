@@ -28,8 +28,18 @@
  *      .catch((error) => console.log(error.message)) // 'Error: Wrong parameter is passed!
  *                                                    //  Ask her again.';
  */
-function willYouMarryMe(/* isPositiveAnswer */) {
-  throw new Error('Not implemented');
+async function willYouMarryMe(isPositiveAnswer) {
+  let answer;
+  if (isPositiveAnswer) {
+    answer = await 'Hooray!!! She said "Yes"!';
+  }
+  if (!isPositiveAnswer) {
+    answer = await 'Oh no, she said "No".';
+  }
+  if (typeof isPositiveAnswer !== 'boolean') {
+    answer = await 'Wrong parameter is passed! Ask her again.';
+  }
+  return answer;
 }
 
 
